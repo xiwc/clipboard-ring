@@ -39,19 +39,19 @@
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.tsbAdd = new System.Windows.Forms.ToolStripButton();
-            this.tsbUpdate = new System.Windows.Forms.ToolStripButton();
-            this.tsbSave = new System.Windows.Forms.ToolStripButton();
-            this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbLock = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbGetValue = new System.Windows.Forms.ToolStripButton();
-            this.tsbPutValue = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.rtbItemValue = new System.Windows.Forms.RichTextBox();
+            this.tsbAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbUpdate = new System.Windows.Forms.ToolStripButton();
+            this.tsbSave = new System.Windows.Forms.ToolStripButton();
+            this.tsbDelete = new System.Windows.Forms.ToolStripButton();
+            this.tsbLock = new System.Windows.Forms.ToolStripButton();
+            this.tsbGetValue = new System.Windows.Forms.ToolStripButton();
+            this.tsbPutValue = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -125,6 +125,7 @@
             this.lvDataItem.UseCompatibleStateImageBehavior = false;
             this.lvDataItem.View = System.Windows.Forms.View.Details;
             this.lvDataItem.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvDataItem_MouseDoubleClick);
+            this.lvDataItem.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvDataItem_ItemChecked);
             this.lvDataItem.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvDataItem_ColumnClick);
             this.lvDataItem.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvDataItem_ItemSelectionChanged);
             this.lvDataItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvDataItem_KeyDown);
@@ -178,86 +179,15 @@
             this.toolStrip.Text = "toolStrip1";
             this.toolStrip.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.toolStrip_MouseDoubleClick);
             // 
-            // tsbAdd
-            // 
-            this.tsbAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbAdd.Image = global::ClipboardRing.Properties.Resources.add;
-            this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAdd.Name = "tsbAdd";
-            this.tsbAdd.Size = new System.Drawing.Size(23, 22);
-            this.tsbAdd.Text = "添加";
-            this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
-            // 
-            // tsbUpdate
-            // 
-            this.tsbUpdate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbUpdate.Image = global::ClipboardRing.Properties.Resources.modify;
-            this.tsbUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbUpdate.Name = "tsbUpdate";
-            this.tsbUpdate.Size = new System.Drawing.Size(23, 22);
-            this.tsbUpdate.Text = "更新";
-            this.tsbUpdate.Click += new System.EventHandler(this.tsbUpdate_Click);
-            // 
-            // tsbSave
-            // 
-            this.tsbSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSave.Image = global::ClipboardRing.Properties.Resources.save;
-            this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSave.Name = "tsbSave";
-            this.tsbSave.Size = new System.Drawing.Size(23, 22);
-            this.tsbSave.Text = "保存";
-            this.tsbSave.Click += new System.EventHandler(this.toolStripButton3_Click_1);
-            // 
-            // tsbDelete
-            // 
-            this.tsbDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbDelete.Image = global::ClipboardRing.Properties.Resources.delete;
-            this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDelete.Name = "tsbDelete";
-            this.tsbDelete.Size = new System.Drawing.Size(23, 22);
-            this.tsbDelete.Text = "删除";
-            this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // tsbLock
-            // 
-            this.tsbLock.CheckOnClick = true;
-            this.tsbLock.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbLock.Image = global::ClipboardRing.Properties.Resources.emblem_readonly;
-            this.tsbLock.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbLock.Name = "tsbLock";
-            this.tsbLock.Size = new System.Drawing.Size(23, 22);
-            this.tsbLock.Text = "锁定界面";
-            this.tsbLock.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsbGetValue
-            // 
-            this.tsbGetValue.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbGetValue.Image = global::ClipboardRing.Properties.Resources.get;
-            this.tsbGetValue.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbGetValue.Name = "tsbGetValue";
-            this.tsbGetValue.Size = new System.Drawing.Size(23, 22);
-            this.tsbGetValue.Text = "取值";
-            this.tsbGetValue.Click += new System.EventHandler(this.toolStripButton2_Click_1);
-            // 
-            // tsbPutValue
-            // 
-            this.tsbPutValue.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbPutValue.Image = global::ClipboardRing.Properties.Resources.put;
-            this.tsbPutValue.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbPutValue.Name = "tsbPutValue";
-            this.tsbPutValue.Size = new System.Drawing.Size(23, 22);
-            this.tsbPutValue.Text = "存值";
-            this.tsbPutValue.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // panel2
             // 
@@ -308,6 +238,77 @@
             this.rtbItemValue.TabIndex = 0;
             this.rtbItemValue.Text = "";
             this.rtbItemValue.WordWrap = false;
+            // 
+            // tsbAdd
+            // 
+            this.tsbAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbAdd.Image = global::ClipboardRing.Properties.Resources.add;
+            this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAdd.Name = "tsbAdd";
+            this.tsbAdd.Size = new System.Drawing.Size(23, 22);
+            this.tsbAdd.Text = "添加";
+            this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
+            // 
+            // tsbUpdate
+            // 
+            this.tsbUpdate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbUpdate.Image = global::ClipboardRing.Properties.Resources.modify;
+            this.tsbUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbUpdate.Name = "tsbUpdate";
+            this.tsbUpdate.Size = new System.Drawing.Size(23, 22);
+            this.tsbUpdate.Text = "更新";
+            this.tsbUpdate.Click += new System.EventHandler(this.tsbUpdate_Click);
+            // 
+            // tsbSave
+            // 
+            this.tsbSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbSave.Image = global::ClipboardRing.Properties.Resources.save;
+            this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSave.Name = "tsbSave";
+            this.tsbSave.Size = new System.Drawing.Size(23, 22);
+            this.tsbSave.Text = "保存";
+            this.tsbSave.Click += new System.EventHandler(this.toolStripButton3_Click_1);
+            // 
+            // tsbDelete
+            // 
+            this.tsbDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbDelete.Image = global::ClipboardRing.Properties.Resources.delete;
+            this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDelete.Name = "tsbDelete";
+            this.tsbDelete.Size = new System.Drawing.Size(23, 22);
+            this.tsbDelete.Text = "删除";
+            this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
+            // 
+            // tsbLock
+            // 
+            this.tsbLock.CheckOnClick = true;
+            this.tsbLock.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbLock.Image = global::ClipboardRing.Properties.Resources.emblem_readonly;
+            this.tsbLock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbLock.Name = "tsbLock";
+            this.tsbLock.Size = new System.Drawing.Size(23, 22);
+            this.tsbLock.Text = "锁定界面";
+            this.tsbLock.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // tsbGetValue
+            // 
+            this.tsbGetValue.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbGetValue.Image = global::ClipboardRing.Properties.Resources.get;
+            this.tsbGetValue.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbGetValue.Name = "tsbGetValue";
+            this.tsbGetValue.Size = new System.Drawing.Size(23, 22);
+            this.tsbGetValue.Text = "取值";
+            this.tsbGetValue.Click += new System.EventHandler(this.toolStripButton2_Click_1);
+            // 
+            // tsbPutValue
+            // 
+            this.tsbPutValue.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbPutValue.Image = global::ClipboardRing.Properties.Resources.put;
+            this.tsbPutValue.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPutValue.Name = "tsbPutValue";
+            this.tsbPutValue.Size = new System.Drawing.Size(23, 22);
+            this.tsbPutValue.Text = "存值";
+            this.tsbPutValue.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // UcClipboardRing
             // 

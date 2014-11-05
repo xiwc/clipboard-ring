@@ -396,5 +396,22 @@ namespace ClipboardRing
             }
             this.GetItem();
         }
+
+        private void lvDataItem_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            ListViewItem item = e.Item;
+
+            if (item.Checked)
+            {
+                foreach (ListViewItem item2 in lvDataItem.Items)
+                {
+                    if (item2.Checked && item2 != item)
+                    {
+                        item2.Checked = false;
+                    }
+                }
+
+            }
+        }
     }
 }

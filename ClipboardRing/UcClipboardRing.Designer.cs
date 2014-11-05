@@ -44,9 +44,6 @@
             this.tsbSave = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbUpMove = new System.Windows.Forms.ToolStripButton();
-            this.tsbDownMove = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbLock = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbGetValue = new System.Windows.Forms.ToolStripButton();
@@ -74,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 313);
+            this.panel1.Size = new System.Drawing.Size(311, 315);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -88,7 +85,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(311, 313);
+            this.splitContainer1.Size = new System.Drawing.Size(311, 315);
             this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -103,7 +100,7 @@
             this.splitContainer2.Panel1.Controls.Add(this.lvDataItem);
             this.splitContainer2.Panel1.Controls.Add(this.toolStrip);
             this.splitContainer2.Panel2Collapsed = true;
-            this.splitContainer2.Size = new System.Drawing.Size(311, 313);
+            this.splitContainer2.Size = new System.Drawing.Size(311, 315);
             this.splitContainer2.SplitterDistance = 281;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -123,7 +120,7 @@
             this.lvDataItem.Location = new System.Drawing.Point(0, 25);
             this.lvDataItem.Name = "lvDataItem";
             this.lvDataItem.ShowItemToolTips = true;
-            this.lvDataItem.Size = new System.Drawing.Size(311, 288);
+            this.lvDataItem.Size = new System.Drawing.Size(311, 290);
             this.lvDataItem.TabIndex = 1;
             this.lvDataItem.UseCompatibleStateImageBehavior = false;
             this.lvDataItem.View = System.Windows.Forms.View.Details;
@@ -170,9 +167,6 @@
             this.tsbSave,
             this.tsbDelete,
             this.toolStripSeparator1,
-            this.tsbUpMove,
-            this.tsbDownMove,
-            this.toolStripSeparator2,
             this.tsbLock,
             this.toolStripSeparator3,
             this.tsbGetValue,
@@ -228,31 +222,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsbUpMove
-            // 
-            this.tsbUpMove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbUpMove.Image = global::ClipboardRing.Properties.Resources.up3;
-            this.tsbUpMove.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbUpMove.Name = "tsbUpMove";
-            this.tsbUpMove.Size = new System.Drawing.Size(23, 22);
-            this.tsbUpMove.Text = "向上移动";
-            this.tsbUpMove.Click += new System.EventHandler(this.tsbUpMove_Click);
-            // 
-            // tsbDownMove
-            // 
-            this.tsbDownMove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbDownMove.Image = global::ClipboardRing.Properties.Resources.down3;
-            this.tsbDownMove.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDownMove.Name = "tsbDownMove";
-            this.tsbDownMove.Size = new System.Drawing.Size(23, 22);
-            this.tsbDownMove.Text = "向下移动";
-            this.tsbDownMove.Click += new System.EventHandler(this.tsbDownMove_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // tsbLock
             // 
@@ -315,7 +284,7 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.panel3);
             this.splitContainer3.Size = new System.Drawing.Size(311, 387);
-            this.splitContainer3.SplitterDistance = 313;
+            this.splitContainer3.SplitterDistance = 315;
             this.splitContainer3.SplitterWidth = 2;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -325,7 +294,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(311, 72);
+            this.panel3.Size = new System.Drawing.Size(311, 70);
             this.panel3.TabIndex = 0;
             // 
             // rtbItemValue
@@ -335,7 +304,7 @@
             this.rtbItemValue.Location = new System.Drawing.Point(0, 0);
             this.rtbItemValue.Name = "rtbItemValue";
             this.rtbItemValue.ReadOnly = true;
-            this.rtbItemValue.Size = new System.Drawing.Size(311, 72);
+            this.rtbItemValue.Size = new System.Drawing.Size(311, 70);
             this.rtbItemValue.TabIndex = 0;
             this.rtbItemValue.Text = "";
             this.rtbItemValue.WordWrap = false;
@@ -383,9 +352,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RichTextBox rtbItemValue;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton tsbUpMove;
-        private System.Windows.Forms.ToolStripButton tsbDownMove;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;

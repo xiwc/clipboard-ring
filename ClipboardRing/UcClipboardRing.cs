@@ -310,57 +310,6 @@ namespace ClipboardRing
             }
         }
 
-        private void tsbUpMove_Click(object sender, EventArgs e)
-        {
-            if (lvDataItem.SelectedItems != null && lvDataItem.SelectedItems.Count > 0)
-            {
-                int firIndex = 0;
-                List<ListViewItem> items = new List<ListViewItem>();
-                
-                foreach (ListViewItem item in lvDataItem.SelectedItems)
-                {
-                    items.Add(item);
-                }
-                firIndex = lvDataItem.Items.IndexOf(items[0]);
-                if (firIndex > 0)
-                {
-                    int index = 0;
-                    for (int i = 0; i < items.Count; i++)
-                    {
-                        index = lvDataItem.Items.IndexOf(items[i]);
-                        lvDataItem.Items.RemoveAt(index);
-                        lvDataItem.Items.Insert(index - 1, items[i]);
-                    }
-                }
-                
-            }
-        }
-
-        private void tsbDownMove_Click(object sender, EventArgs e)
-        {
-            if (lvDataItem.SelectedItems != null && lvDataItem.SelectedItems.Count > 0)
-            {
-                int LastIndex = 0;
-                List<ListViewItem> items = new List<ListViewItem>();
-
-                foreach (ListViewItem item in lvDataItem.SelectedItems)
-                {
-                    items.Add(item);
-                }
-                LastIndex = lvDataItem.Items.IndexOf(items[items.Count - 1]);
-                if (LastIndex < lvDataItem.Items.Count - 1)
-                {
-                    int index = 0;
-                    for (int i = items.Count - 1; i >= 0 ; i--)
-                    {
-                        index = lvDataItem.Items.IndexOf(items[i]);
-                        lvDataItem.Items.RemoveAt(index);
-                        lvDataItem.Items.Insert(index + 1, items[i]);
-                    }
-                }
-            }
-        }
-
         private void toolStrip_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.splitContainer3.Panel2Collapsed = !splitContainer3.Panel2Collapsed;

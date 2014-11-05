@@ -28,24 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSearch = new System.Windows.Forms.Button();
             this.cbSearch = new System.Windows.Forms.ComboBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = global::FormBase.Properties.Resources.search;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(234, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(20, 20);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cbSearch
             // 
@@ -61,13 +46,28 @@
             this.cbSearch.TextChanged += new System.EventHandler(this.cbSearch_TextChanged);
             this.cbSearch.Click += new System.EventHandler(this.cbSearch_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.BackgroundImage = global::FormBase.Properties.Resources.clear;
+            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Location = new System.Drawing.Point(234, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(20, 20);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // UcSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.cbSearch);
-            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnClear);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UcSearch";
             this.Size = new System.Drawing.Size(263, 25);
@@ -77,7 +77,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ComboBox cbSearch;
     }
 }

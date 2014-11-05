@@ -74,6 +74,12 @@ namespace FormBase
         {
             this.ucClipboardRing1.LoadDataItems();
             this.ucSearch1.TextChanged += new UcSearch.SearchDelegate(ucSearch1_TextChanged);
+            this.ucSearch1.EnterKeyDown += new UcSearch.SearchDelegate(ucSearch1_EnterKeyDown);
+        }
+
+        void ucSearch1_EnterKeyDown(object sender, string value)
+        {
+            this.ucClipboardRing1.GetSearchResult(value);
         }
 
         void ucSearch1_TextChanged(object sender, string value)

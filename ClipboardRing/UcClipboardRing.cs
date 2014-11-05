@@ -176,6 +176,7 @@ namespace ClipboardRing
                 {
                     sb.AppendLine(item.SubItems[1].Text);
                     item.SubItems[5].Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                    break;
                 }
             }
 
@@ -378,6 +379,22 @@ namespace ClipboardRing
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             this.PutItem();
+        }
+
+        public void GetSearchResult(string value)
+        {
+            foreach (ListViewItem item in lvDataItem.Items)
+            {
+                if (item.Selected)
+                {
+                    item.Checked = true;
+                }
+                else
+                {
+                    item.Checked = false;
+                }
+            }
+            this.GetItem();
         }
     }
 }

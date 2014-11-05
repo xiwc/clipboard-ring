@@ -15,22 +15,17 @@ namespace FormBase
 
         new public event SearchDelegate TextChanged;
 
+        new public event SearchDelegate EnterKeyDown;
+
         public UcSearch()
         {
             InitializeComponent();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
+            cbSearch.Text = "";
             TextChanged(sender, cbSearch.Text);
-            string txt = cbSearch.Text;
-            if (!string.IsNullOrEmpty(txt.Trim()))
-            {
-                if (!cbSearch.Items.Contains(txt))
-                {
-                    cbSearch.Items.Insert(0, txt);
-                }
-            }
         }
 
         private void cbSearch_TextChanged(object sender, EventArgs e)
@@ -60,6 +55,11 @@ namespace FormBase
                     {
                         cbSearch.Items.Insert(0, txt);
                     }
+                }
+
+                if (EnterKeyDown != null)
+                {
+                    EnterKeyDown(sender, txt);
                 }
             }
             else if (e.KeyCode == Keys.Delete)

@@ -15,7 +15,7 @@ namespace FormBase
 
         new public event SearchDelegate TextChanged;
 
-        new public event SearchDelegate EnterKeyDown;
+        public event SearchDelegate EnterKeyDown;
 
         public UcSearch()
         {

@@ -32,26 +32,24 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.lvDataItem = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.rtbItemValue = new System.Windows.Forms.RichTextBox();
             this.tsbAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbUpdate = new System.Windows.Forms.ToolStripButton();
             this.tsbSave = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
-            this.tsbLock = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbGetValue = new System.Windows.Forms.ToolStripButton();
             this.tsbPutValue = new System.Windows.Forms.ToolStripButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rtbItemValue = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -71,7 +69,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 315);
+            this.panel1.Size = new System.Drawing.Size(311, 351);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -85,7 +83,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(311, 315);
+            this.splitContainer1.Size = new System.Drawing.Size(311, 351);
             this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -100,13 +98,13 @@
             this.splitContainer2.Panel1.Controls.Add(this.lvDataItem);
             this.splitContainer2.Panel1.Controls.Add(this.toolStrip);
             this.splitContainer2.Panel2Collapsed = true;
-            this.splitContainer2.Size = new System.Drawing.Size(311, 315);
+            this.splitContainer2.Size = new System.Drawing.Size(311, 351);
             this.splitContainer2.SplitterDistance = 281;
             this.splitContainer2.TabIndex = 0;
             // 
             // lvDataItem
             // 
-            this.lvDataItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvDataItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvDataItem.CheckBoxes = true;
             this.lvDataItem.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -120,15 +118,15 @@
             this.lvDataItem.Location = new System.Drawing.Point(0, 25);
             this.lvDataItem.Name = "lvDataItem";
             this.lvDataItem.ShowItemToolTips = true;
-            this.lvDataItem.Size = new System.Drawing.Size(311, 290);
+            this.lvDataItem.Size = new System.Drawing.Size(311, 326);
             this.lvDataItem.TabIndex = 1;
             this.lvDataItem.UseCompatibleStateImageBehavior = false;
             this.lvDataItem.View = System.Windows.Forms.View.Details;
-            this.lvDataItem.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvDataItem_MouseDoubleClick);
-            this.lvDataItem.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvDataItem_ItemChecked);
             this.lvDataItem.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvDataItem_ColumnClick);
+            this.lvDataItem.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvDataItem_ItemChecked);
             this.lvDataItem.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvDataItem_ItemSelectionChanged);
             this.lvDataItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvDataItem_KeyDown);
+            this.lvDataItem.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvDataItem_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -168,76 +166,15 @@
             this.tsbSave,
             this.tsbDelete,
             this.toolStripSeparator1,
-            this.tsbLock,
-            this.toolStripSeparator3,
             this.tsbGetValue,
             this.tsbPutValue});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Padding = new System.Windows.Forms.Padding(0);
             this.toolStrip.Size = new System.Drawing.Size(311, 25);
             this.toolStrip.TabIndex = 0;
             this.toolStrip.Text = "toolStrip1";
             this.toolStrip.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.toolStrip_MouseDoubleClick);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.splitContainer3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(311, 387);
-            this.panel2.TabIndex = 1;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.panel1);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.panel3);
-            this.splitContainer3.Size = new System.Drawing.Size(311, 387);
-            this.splitContainer3.SplitterDistance = 315;
-            this.splitContainer3.SplitterWidth = 2;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.rtbItemValue);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(311, 70);
-            this.panel3.TabIndex = 0;
-            // 
-            // rtbItemValue
-            // 
-            this.rtbItemValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbItemValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbItemValue.Location = new System.Drawing.Point(0, 0);
-            this.rtbItemValue.Name = "rtbItemValue";
-            this.rtbItemValue.ReadOnly = true;
-            this.rtbItemValue.Size = new System.Drawing.Size(311, 70);
-            this.rtbItemValue.TabIndex = 0;
-            this.rtbItemValue.Text = "";
-            this.rtbItemValue.WordWrap = false;
             // 
             // tsbAdd
             // 
@@ -279,16 +216,10 @@
             this.tsbDelete.Text = "删除";
             this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
-            // tsbLock
+            // toolStripSeparator1
             // 
-            this.tsbLock.CheckOnClick = true;
-            this.tsbLock.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbLock.Image = global::ClipboardRing.Properties.Resources.emblem_readonly;
-            this.tsbLock.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbLock.Name = "tsbLock";
-            this.tsbLock.Size = new System.Drawing.Size(23, 22);
-            this.tsbLock.Text = "锁定界面";
-            this.tsbLock.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // tsbGetValue
             // 
@@ -310,13 +241,63 @@
             this.tsbPutValue.Text = "存值";
             this.tsbPutValue.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.splitContainer3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(311, 419);
+            this.panel2.TabIndex = 1;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.panel1);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.panel3);
+            this.splitContainer3.Size = new System.Drawing.Size(311, 419);
+            this.splitContainer3.SplitterDistance = 351;
+            this.splitContainer3.SplitterWidth = 2;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.rtbItemValue);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(311, 66);
+            this.panel3.TabIndex = 0;
+            // 
+            // rtbItemValue
+            // 
+            this.rtbItemValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbItemValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbItemValue.Location = new System.Drawing.Point(0, 0);
+            this.rtbItemValue.Name = "rtbItemValue";
+            this.rtbItemValue.ReadOnly = true;
+            this.rtbItemValue.Size = new System.Drawing.Size(311, 66);
+            this.rtbItemValue.TabIndex = 0;
+            this.rtbItemValue.Text = "";
+            this.rtbItemValue.WordWrap = false;
+            // 
             // UcClipboardRing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Name = "UcClipboardRing";
-            this.Size = new System.Drawing.Size(311, 387);
+            this.Size = new System.Drawing.Size(311, 419);
             this.Load += new System.EventHandler(this.UcClipboardRing_Load);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -356,10 +337,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ToolStripButton tsbLock;
         private System.Windows.Forms.ToolStripButton tsbGetValue;
         private System.Windows.Forms.ToolStripButton tsbSave;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton tsbPutValue;
     }
 }

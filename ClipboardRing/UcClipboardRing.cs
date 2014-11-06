@@ -347,11 +347,6 @@ namespace ClipboardRing
             // 用新的排序方法对ListView排序
             this.lvDataItem.Sort();   
         }
-        public bool FormLockFlag = false;
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            FormLockFlag = tsbLock.Checked;
-        }
 
         private void toolStripButton3_Click_1(object sender, EventArgs e)
         {

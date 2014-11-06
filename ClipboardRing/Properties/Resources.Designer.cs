@@ -83,26 +83,6 @@ namespace ClipboardRing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap down3 {
-            get {
-                object obj = ResourceManager.GetObject("down3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap emblem_readonly {
-            get {
-                object obj = ResourceManager.GetObject("emblem_readonly", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap get {
             get {
                 object obj = ResourceManager.GetObject("get", resourceCulture);
@@ -136,16 +116,6 @@ namespace ClipboardRing.Properties {
         internal static System.Drawing.Bitmap save {
             get {
                 object obj = ResourceManager.GetObject("save", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap up3 {
-            get {
-                object obj = ResourceManager.GetObject("up3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

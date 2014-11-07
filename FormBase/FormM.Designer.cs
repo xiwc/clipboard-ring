@@ -64,16 +64,16 @@
             this.panelMain.Controls.Add(this.pbLogo);
             this.panelMain.Location = new System.Drawing.Point(1, 1);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(262, 397);
+            this.panelMain.Size = new System.Drawing.Size(262, 366);
             this.panelMain.TabIndex = 0;
             this.panelMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseDown);
             this.panelMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseMove);
             // 
             // ucClipboardRing1
             // 
-            this.ucClipboardRing1.Location = new System.Drawing.Point(1, 54);
+            this.ucClipboardRing1.Location = new System.Drawing.Point(1, 50);
             this.ucClipboardRing1.Name = "ucClipboardRing1";
-            this.ucClipboardRing1.Size = new System.Drawing.Size(260, 341);
+            this.ucClipboardRing1.Size = new System.Drawing.Size(260, 315);
             this.ucClipboardRing1.TabIndex = 9;
             // 
             // lblTitle
@@ -98,7 +98,7 @@
             this.btnGet.Location = new System.Drawing.Point(167, 1);
             this.btnGet.Margin = new System.Windows.Forms.Padding(0);
             this.btnGet.Name = "btnGet";
-            this.btnGet.Size = new System.Drawing.Size(18, 20);
+            this.btnGet.Size = new System.Drawing.Size(18, 18);
             this.btnGet.TabIndex = 7;
             this.toolTip.SetToolTip(this.btnGet, "取值(热键F4)");
             this.btnGet.UseVisualStyleBackColor = true;
@@ -114,7 +114,7 @@
             this.btnPut.Location = new System.Drawing.Point(190, 1);
             this.btnPut.Margin = new System.Windows.Forms.Padding(0);
             this.btnPut.Name = "btnPut";
-            this.btnPut.Size = new System.Drawing.Size(18, 20);
+            this.btnPut.Size = new System.Drawing.Size(18, 18);
             this.btnPut.TabIndex = 6;
             this.toolTip.SetToolTip(this.btnPut, "存值(热键F3)");
             this.btnPut.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Location = new System.Drawing.Point(239, 1);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(20, 22);
+            this.btnClose.Size = new System.Drawing.Size(20, 20);
             this.btnClose.TabIndex = 5;
             this.toolTip.SetToolTip(this.btnClose, "关闭");
             this.btnClose.UseVisualStyleBackColor = true;
@@ -142,10 +142,10 @@
             this.ucSearch1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ucSearch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ucSearch1.Location = new System.Drawing.Point(2, 24);
+            this.ucSearch1.Location = new System.Drawing.Point(2, 22);
             this.ucSearch1.Margin = new System.Windows.Forms.Padding(0);
             this.ucSearch1.Name = "ucSearch1";
-            this.ucSearch1.Size = new System.Drawing.Size(258, 27);
+            this.ucSearch1.Size = new System.Drawing.Size(258, 25);
             this.ucSearch1.TabIndex = 1;
             // 
             // pbLogo
@@ -153,7 +153,7 @@
             this.pbLogo.Image = global::FormBase.Properties.Resources.clipboard;
             this.pbLogo.Location = new System.Drawing.Point(1, 1);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(20, 22);
+            this.pbLogo.Size = new System.Drawing.Size(20, 20);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
@@ -173,7 +173,7 @@
             this.关闭提示ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
             // 
             // 热键开启ToolStripMenuItem
             // 
@@ -181,33 +181,31 @@
             this.热键开启ToolStripMenuItem.CheckOnClick = true;
             this.热键开启ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.热键开启ToolStripMenuItem.Name = "热键开启ToolStripMenuItem";
-            this.热键开启ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.热键开启ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.热键开启ToolStripMenuItem.Text = "热键开启";
             this.热键开启ToolStripMenuItem.Click += new System.EventHandler(this.热键开启ToolStripMenuItem_Click);
             // 
             // 关闭提示ToolStripMenuItem
             // 
-            this.关闭提示ToolStripMenuItem.Checked = true;
             this.关闭提示ToolStripMenuItem.CheckOnClick = true;
-            this.关闭提示ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.关闭提示ToolStripMenuItem.Name = "关闭提示ToolStripMenuItem";
-            this.关闭提示ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.关闭提示ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.关闭提示ToolStripMenuItem.Text = "关闭提示";
             this.关闭提示ToolStripMenuItem.Click += new System.EventHandler(this.关闭提示ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
             // FormM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(264, 399);
+            this.ClientSize = new System.Drawing.Size(264, 368);
             this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormM";

@@ -20,7 +20,7 @@ namespace ClipboardRing
         private Font penFont;
         private Brush penBrush;
 
-        public bool ShowWarning = false;
+        public bool ShowWarning = true;
 
         private void FormCanvas_Paint(object sender, PaintEventArgs e)
         {

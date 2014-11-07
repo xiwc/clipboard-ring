@@ -28,6 +28,7 @@ namespace ClipboardRing
         //热键注册
         private int idF3;//存值
         private int idF4;//取值
+        private int idCtrlQ;//激活窗口
         /// <summary>
         /// 热键注册
         /// </summary>
@@ -36,9 +37,11 @@ namespace ClipboardRing
             //热键注册
             idF3 = "F3".GetHashCode();
             idF4 = "F4".GetHashCode();
+            idCtrlQ = "CtrlQ".GetHashCode();
 
             Win32Api.RegisterHotKey(this.Handle, idF3, (int)KeyModifiers.None, (int)Keys.F3);
             Win32Api.RegisterHotKey(this.Handle, idF4, (int)KeyModifiers.None, (int)Keys.F4);
+            Win32Api.RegisterHotKey(this.Handle, idCtrlQ, (int)KeyModifiers.Control, (int)Keys.Q);
         }
         /// <summary>
         /// 卸载热键
@@ -47,6 +50,7 @@ namespace ClipboardRing
         {
             Win32Api.UnregisterHotKey(this.Handle, this.idF3);
             Win32Api.UnregisterHotKey(this.Handle, this.idF4);
+            Win32Api.UnregisterHotKey(this.Handle, this.idCtrlQ);
         }
         protected override void WndProc(ref Message m)
         {
@@ -61,6 +65,20 @@ namespace ClipboardRing
                     else if (idF4 == (int)m.WParam)
                     {
                         this.GetItem();
+                    }
+                    else if (idCtrlQ == (int)m.WParam)
+                    {
+                        Form form = this.ParentForm;
+                        if (form != null)
+                        {
+                            form.Visible = !form.Visible;
+
+                            if (form.Visible)
+                            {
+                                form.Activate();
+                                form.Focus();
+                            }
+                        }
                     }
                     break;
             }
@@ -351,6 +369,7 @@ namespace ClipboardRing
         private void toolStripButton3_Click_1(object sender, EventArgs e)
         {
             this.SaveDataItems();
+            formCanvas.DrawString("保存成功!");
         }
 
         private void toolStripButton2_Click_1(object sender, EventArgs e)

@@ -31,12 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormM));
             this.panelMain = new System.Windows.Forms.Panel();
-            this.ucClipboardRing1 = new ClipboardRing.UcClipboardRing();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnGet = new System.Windows.Forms.Button();
-            this.btnPut = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.ucSearch1 = new FormBase.UcSearch();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -44,6 +40,8 @@
             this.热键开启ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关闭提示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ucClipboardRing1 = new ClipboardRing.UcClipboardRing();
+            this.ucSearch1 = new FormBase.UcSearch();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -57,8 +55,6 @@
             this.panelMain.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panelMain.Controls.Add(this.ucClipboardRing1);
             this.panelMain.Controls.Add(this.lblTitle);
-            this.panelMain.Controls.Add(this.btnGet);
-            this.panelMain.Controls.Add(this.btnPut);
             this.panelMain.Controls.Add(this.btnClose);
             this.panelMain.Controls.Add(this.ucSearch1);
             this.panelMain.Controls.Add(this.pbLogo);
@@ -68,13 +64,6 @@
             this.panelMain.TabIndex = 0;
             this.panelMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseDown);
             this.panelMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseMove);
-            // 
-            // ucClipboardRing1
-            // 
-            this.ucClipboardRing1.Location = new System.Drawing.Point(1, 50);
-            this.ucClipboardRing1.Name = "ucClipboardRing1";
-            this.ucClipboardRing1.Size = new System.Drawing.Size(260, 315);
-            this.ucClipboardRing1.TabIndex = 9;
             // 
             // lblTitle
             // 
@@ -87,38 +76,6 @@
             this.lblTitle.Text = "剪贴环";
             this.lblTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseDown);
             this.lblTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseMove);
-            // 
-            // btnGet
-            // 
-            this.btnGet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGet.BackgroundImage = global::FormBase.Properties.Resources.get;
-            this.btnGet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGet.FlatAppearance.BorderSize = 0;
-            this.btnGet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGet.Location = new System.Drawing.Point(167, 1);
-            this.btnGet.Margin = new System.Windows.Forms.Padding(0);
-            this.btnGet.Name = "btnGet";
-            this.btnGet.Size = new System.Drawing.Size(18, 18);
-            this.btnGet.TabIndex = 7;
-            this.toolTip.SetToolTip(this.btnGet, "取值(热键F4)");
-            this.btnGet.UseVisualStyleBackColor = true;
-            this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
-            // 
-            // btnPut
-            // 
-            this.btnPut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPut.BackgroundImage = global::FormBase.Properties.Resources.put;
-            this.btnPut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPut.FlatAppearance.BorderSize = 0;
-            this.btnPut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPut.Location = new System.Drawing.Point(190, 1);
-            this.btnPut.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPut.Name = "btnPut";
-            this.btnPut.Size = new System.Drawing.Size(18, 18);
-            this.btnPut.TabIndex = 6;
-            this.toolTip.SetToolTip(this.btnPut, "存值(热键F3)");
-            this.btnPut.UseVisualStyleBackColor = true;
-            this.btnPut.Click += new System.EventHandler(this.btnPut_Click);
             // 
             // btnClose
             // 
@@ -136,17 +93,6 @@
             this.toolTip.SetToolTip(this.btnClose, "关闭");
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // ucSearch1
-            // 
-            this.ucSearch1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucSearch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ucSearch1.Location = new System.Drawing.Point(2, 22);
-            this.ucSearch1.Margin = new System.Windows.Forms.Padding(0);
-            this.ucSearch1.Name = "ucSearch1";
-            this.ucSearch1.Size = new System.Drawing.Size(258, 25);
-            this.ucSearch1.TabIndex = 1;
             // 
             // pbLogo
             // 
@@ -173,7 +119,7 @@
             this.关闭提示ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 70);
             // 
             // 热键开启ToolStripMenuItem
             // 
@@ -181,7 +127,7 @@
             this.热键开启ToolStripMenuItem.CheckOnClick = true;
             this.热键开启ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.热键开启ToolStripMenuItem.Name = "热键开启ToolStripMenuItem";
-            this.热键开启ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.热键开启ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.热键开启ToolStripMenuItem.Text = "热键开启";
             this.热键开启ToolStripMenuItem.Click += new System.EventHandler(this.热键开启ToolStripMenuItem_Click);
             // 
@@ -189,16 +135,34 @@
             // 
             this.关闭提示ToolStripMenuItem.CheckOnClick = true;
             this.关闭提示ToolStripMenuItem.Name = "关闭提示ToolStripMenuItem";
-            this.关闭提示ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.关闭提示ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.关闭提示ToolStripMenuItem.Text = "关闭提示";
             this.关闭提示ToolStripMenuItem.Click += new System.EventHandler(this.关闭提示ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
+            // 
+            // ucClipboardRing1
+            // 
+            this.ucClipboardRing1.Location = new System.Drawing.Point(1, 50);
+            this.ucClipboardRing1.Name = "ucClipboardRing1";
+            this.ucClipboardRing1.Size = new System.Drawing.Size(260, 315);
+            this.ucClipboardRing1.TabIndex = 9;
+            // 
+            // ucSearch1
+            // 
+            this.ucSearch1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucSearch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ucSearch1.Location = new System.Drawing.Point(2, 22);
+            this.ucSearch1.Margin = new System.Windows.Forms.Padding(0);
+            this.ucSearch1.Name = "ucSearch1";
+            this.ucSearch1.Size = new System.Drawing.Size(258, 25);
+            this.ucSearch1.TabIndex = 1;
             // 
             // FormM
             // 
@@ -230,8 +194,6 @@
         private System.Windows.Forms.PictureBox pbLogo;
         private UcSearch ucSearch1;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnGet;
-        private System.Windows.Forms.Button btnPut;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Label lblTitle;
         private ClipboardRing.UcClipboardRing ucClipboardRing1;

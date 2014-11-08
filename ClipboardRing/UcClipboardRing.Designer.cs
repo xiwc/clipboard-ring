@@ -38,10 +38,6 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.rtbItemValue = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
@@ -49,17 +45,21 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnGet = new System.Windows.Forms.Button();
             this.btnPut = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rtbItemValue = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 321);
+            this.panel1.Size = new System.Drawing.Size(311, 323);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -82,7 +82,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(311, 321);
+            this.splitContainer1.Size = new System.Drawing.Size(311, 323);
             this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -97,7 +97,7 @@
             this.splitContainer2.Panel1.Controls.Add(this.lvDataItem);
             this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
             this.splitContainer2.Panel2Collapsed = true;
-            this.splitContainer2.Size = new System.Drawing.Size(311, 321);
+            this.splitContainer2.Size = new System.Drawing.Size(311, 323);
             this.splitContainer2.SplitterDistance = 281;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -117,13 +117,14 @@
             this.lvDataItem.Location = new System.Drawing.Point(0, 29);
             this.lvDataItem.Name = "lvDataItem";
             this.lvDataItem.ShowItemToolTips = true;
-            this.lvDataItem.Size = new System.Drawing.Size(311, 292);
+            this.lvDataItem.Size = new System.Drawing.Size(311, 294);
             this.lvDataItem.TabIndex = 1;
             this.lvDataItem.UseCompatibleStateImageBehavior = false;
             this.lvDataItem.View = System.Windows.Forms.View.Details;
             this.lvDataItem.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvDataItem_ColumnClick);
             this.lvDataItem.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvDataItem_ItemChecked);
             this.lvDataItem.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvDataItem_ItemSelectionChanged);
+            this.lvDataItem.SelectedIndexChanged += new System.EventHandler(this.lvDataItem_SelectedIndexChanged);
             this.lvDataItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvDataItem_KeyDown);
             this.lvDataItem.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvDataItem_MouseDoubleClick);
             // 
@@ -155,56 +156,6 @@
             // 
             this.columnHeader6.Text = "最后访问时间";
             this.columnHeader6.Width = 130;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.splitContainer3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(311, 387);
-            this.panel2.TabIndex = 1;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.panel1);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.panel3);
-            this.splitContainer3.Size = new System.Drawing.Size(311, 387);
-            this.splitContainer3.SplitterDistance = 321;
-            this.splitContainer3.SplitterWidth = 2;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.rtbItemValue);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(311, 64);
-            this.panel3.TabIndex = 0;
-            // 
-            // rtbItemValue
-            // 
-            this.rtbItemValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbItemValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbItemValue.Location = new System.Drawing.Point(0, 0);
-            this.rtbItemValue.Name = "rtbItemValue";
-            this.rtbItemValue.ReadOnly = true;
-            this.rtbItemValue.Size = new System.Drawing.Size(311, 64);
-            this.rtbItemValue.TabIndex = 0;
-            this.rtbItemValue.Text = "";
-            this.rtbItemValue.WordWrap = false;
             // 
             // flowLayoutPanel1
             // 
@@ -304,6 +255,56 @@
             this.btnPut.UseVisualStyleBackColor = false;
             this.btnPut.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.splitContainer3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(311, 387);
+            this.panel2.TabIndex = 1;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.panel1);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.panel3);
+            this.splitContainer3.Size = new System.Drawing.Size(311, 387);
+            this.splitContainer3.SplitterDistance = 323;
+            this.splitContainer3.SplitterWidth = 2;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.rtbItemValue);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(311, 62);
+            this.panel3.TabIndex = 0;
+            // 
+            // rtbItemValue
+            // 
+            this.rtbItemValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbItemValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbItemValue.Location = new System.Drawing.Point(0, 0);
+            this.rtbItemValue.Name = "rtbItemValue";
+            this.rtbItemValue.ReadOnly = true;
+            this.rtbItemValue.Size = new System.Drawing.Size(311, 62);
+            this.rtbItemValue.TabIndex = 0;
+            this.rtbItemValue.Text = "";
+            this.rtbItemValue.WordWrap = false;
+            // 
             // UcClipboardRing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -317,12 +318,12 @@
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             this.splitContainer3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

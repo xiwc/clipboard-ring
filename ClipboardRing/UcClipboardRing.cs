@@ -459,7 +459,24 @@ namespace ClipboardRing
                         item2.Checked = false;
                     }
                 }
+            }
+        }
 
+        private void lvDataItem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine();
+
+            ListView lv = sender as ListView;
+
+            if (lv != null)
+            {
+                foreach (ListViewItem item in lvDataItem.Items)
+                {
+                    if (item.Selected)
+                    {
+                        item.Checked = true;
+                    }
+                }
             }
         }
     }

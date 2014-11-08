@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using QQPrintScreen;
 using DesktopHelper;
 using DeskTool;
+using System.Threading;
 
 namespace ClipboardRing
 {
@@ -60,13 +61,14 @@ namespace ClipboardRing
                 case WM_HOTKEY:
                     if (idF3 == (int)m.WParam)
                     {
-                        POINT p = new POINT();
-                        Win32Api.GetCursorPos(ref p);
-                        IntPtr h = Win32Api.WindowFromPoint(p);
-                        Win32Api.keybd_event(17, 0x1D, 0, 0);
-                        Win32Api.PostMessage(h, 0x100, 65, 0);
-                        Win32Api.PostMessage(h, 0x101, 65, 0);
-                        Win32Api.keybd_event(17, 0x1D, 0x2, 0);
+                        //POINT p = new POINT();
+                        //Win32Api.GetCursorPos(ref p);
+                        //IntPtr h = Win32Api.WindowFromPoint(p);
+                        //Win32Api.keybd_event(17, 0, 0, 0);// ctrl 按下
+                        //Win32Api.keybd_event(65, 0, 0, 0); // c 按下
+                        //Win32Api.keybd_event(65, 0, 0x2, 0);// c 抬起
+                        //Win32Api.keybd_event(17, 0, 0x2, 0);// ctrl 抬起
+                        //Thread.Sleep(1000);
                         this.PutItem();
                     }
                     else if (idF4 == (int)m.WParam)

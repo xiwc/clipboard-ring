@@ -165,9 +165,13 @@ namespace DesktopHelper
         [DllImport("user32.dll")]
         public static extern bool ClipCursor(ref RECT lpRect);
 
-        //模拟键盘事件
-        [DllImport("user32.dll")]
-        public static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, uint dwExtraInfo);
+        [DllImport("user32.dll", EntryPoint = "keybd_event")]
+        public static extern void keybd_event(
+            byte bVk,
+            byte bScan,
+            int dwFlags,
+            int dwExtraInfo
+        );
 
         [DllImport("user32.dll")]
         public static extern bool PostMessage(IntPtr hwnd, int msg, uint wParam, uint lParam);

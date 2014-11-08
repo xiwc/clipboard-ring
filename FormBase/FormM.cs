@@ -2,6 +2,8 @@
 using ClipboardRing;
 using System.Drawing;
 using System;
+using DesktopHelper;
+using QQPrintScreen;
 
 namespace FormBase
 {
@@ -116,5 +118,6 @@ namespace FormBase
         {
             this.ucClipboardRing1.formCanvas.ShowWarning = !关闭提示ToolStripMenuItem.Checked;
         }
+
     }
 }

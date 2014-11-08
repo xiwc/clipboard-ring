@@ -26,10 +26,13 @@ namespace ClipboardRing
         {
             RegisterHotKey();
         }
+
         //热键注册
         private int idF3;//存值
         private int idF4;//取值
         private int idCtrlQ;//激活窗口
+        private int idEsc;//激活窗口
+
         /// <summary>
         /// 热键注册
         /// </summary>
@@ -39,10 +42,12 @@ namespace ClipboardRing
             idF3 = "F3".GetHashCode();
             idF4 = "F4".GetHashCode();
             idCtrlQ = "CtrlQ".GetHashCode();
+            idEsc = "Esc".GetHashCode();
 
             Win32Api.RegisterHotKey(this.Handle, idF3, (int)KeyModifiers.None, (int)Keys.F3);
             Win32Api.RegisterHotKey(this.Handle, idF4, (int)KeyModifiers.None, (int)Keys.F4);
             Win32Api.RegisterHotKey(this.Handle, idCtrlQ, (int)KeyModifiers.Control, (int)Keys.Q);
+            //Win32Api.RegisterHotKey(this.Handle, idEsc, (int)KeyModifiers.None, (int)Keys.Escape);
         }
         /// <summary>
         /// 卸载热键
@@ -52,23 +57,23 @@ namespace ClipboardRing
             Win32Api.UnregisterHotKey(this.Handle, this.idF3);
             Win32Api.UnregisterHotKey(this.Handle, this.idF4);
             Win32Api.UnregisterHotKey(this.Handle, this.idCtrlQ);
+            //Win32Api.UnregisterHotKey(this.Handle, this.idEsc);
         }
         protected override void WndProc(ref Message m)
         {
             const int WM_HOTKEY = 0x0312;
+            const int VK_CONTROL = 0x11;
+            const int VK_C = 67;
+            const int WM_KEYDOWN = 0x100;
+            const int WM_KEYUP = 0x101;
+            const int KEYEVENTF_KEYUP = 0x2;
+
+
             switch (m.Msg)
             {
                 case WM_HOTKEY:
                     if (idF3 == (int)m.WParam)
                     {
-                        //POINT p = new POINT();
-                        //Win32Api.GetCursorPos(ref p);
-                        //IntPtr h = Win32Api.WindowFromPoint(p);
-                        //Win32Api.keybd_event(17, 0, 0, 0);// ctrl 按下
-                        //Win32Api.keybd_event(65, 0, 0, 0); // c 按下
-                        //Win32Api.keybd_event(65, 0, 0x2, 0);// c 抬起
-                        //Win32Api.keybd_event(17, 0, 0x2, 0);// ctrl 抬起
-                        //Thread.Sleep(1000);
                         this.PutItem();
                     }
                     else if (idF4 == (int)m.WParam)
@@ -88,6 +93,27 @@ namespace ClipboardRing
                                 form.Focus();
                             }
                         }
+                    }
+                    else if (idEsc == (int)m.WParam)
+                    {
+                        //MessageBox.Show(Convert.ToString(Win32Api.MapVirtualKey(VK_CONTROL, 0), 16));
+
+                        POINT p = new POINT();
+                        Win32Api.GetCursorPos(ref p);
+                        IntPtr h = Win32Api.WindowFromPoint(p);
+
+                         //keybd_event VK_SHIFT, &H2A, 0, 0  ' 模拟按下SHIFT键，&H2A是VK_SHIFT的扫描码
+                         //PostMessage hWndMsg, WM_KEYDOWN, VK_A, &H001E0001 ' 模拟按下 A 键，SHIFT+A产生一个大写A字符
+                         //PostMessage hWndMsg, WM_KEYUP, VK_A, &HC01E0001   ' 模拟抬起 A 键
+                         //keybd_event VK_SHIFT, &H2A, KEYEVENTF_KEYUP, 0    ' 模拟抬起 SHIFT 键
+
+                        Win32Api.keybd_event(VK_CONTROL, 0x1D, 0, 0);// ctrl 按下
+                        Win32Api.PostMessage(h, WM_KEYDOWN, VK_C, 0x002E0001); // c 按下
+                        Win32Api.PostMessage(h, WM_KEYUP, VK_C, 0xC02E0001);// c 抬起
+                        Win32Api.keybd_event(VK_CONTROL, 0x1D, KEYEVENTF_KEYUP, 0);// ctrl 抬起
+
+                        //Thread.Sleep(1000);
+                        formCanvas.DrawString(Clipboard.GetText(TextDataFormat.Text));
                     }
                     break;
             }

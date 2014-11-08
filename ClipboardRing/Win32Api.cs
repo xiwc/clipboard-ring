@@ -176,6 +176,9 @@ namespace DesktopHelper
         [DllImport("user32.dll")]
         public static extern bool PostMessage(IntPtr hwnd, int msg, uint wParam, uint lParam);
 
+        //该函数将一虚拟键码翻译（映射）成一扫描码或一字符值，或者将一扫描码翻译成一虚拟键码
+        [DllImport("user32.dll")]
+        public static extern byte MapVirtualKey(byte wCode, int wMap);
     }
 
 }

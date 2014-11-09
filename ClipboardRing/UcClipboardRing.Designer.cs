@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -49,6 +50,13 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.rtbItemValue = new System.Windows.Forms.RichTextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.复制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.置顶ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.置底ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -60,6 +68,7 @@
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,7 +77,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 323);
+            this.panel1.Size = new System.Drawing.Size(311, 325);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -82,7 +91,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(311, 323);
+            this.splitContainer1.Size = new System.Drawing.Size(311, 325);
             this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -97,7 +106,7 @@
             this.splitContainer2.Panel1.Controls.Add(this.lvDataItem);
             this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
             this.splitContainer2.Panel2Collapsed = true;
-            this.splitContainer2.Size = new System.Drawing.Size(311, 323);
+            this.splitContainer2.Size = new System.Drawing.Size(311, 325);
             this.splitContainer2.SplitterDistance = 281;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -112,12 +121,13 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
+            this.lvDataItem.ContextMenuStrip = this.contextMenuStrip1;
             this.lvDataItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvDataItem.FullRowSelect = true;
             this.lvDataItem.Location = new System.Drawing.Point(0, 29);
             this.lvDataItem.Name = "lvDataItem";
             this.lvDataItem.ShowItemToolTips = true;
-            this.lvDataItem.Size = new System.Drawing.Size(311, 294);
+            this.lvDataItem.Size = new System.Drawing.Size(311, 296);
             this.lvDataItem.TabIndex = 1;
             this.lvDataItem.UseCompatibleStateImageBehavior = false;
             this.lvDataItem.View = System.Windows.Forms.View.Details;
@@ -211,7 +221,7 @@
             this.btnSave.Size = new System.Drawing.Size(23, 23);
             this.btnSave.TabIndex = 2;
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.toolStripButton3_Click_1);
+            this.btnSave.Click += new System.EventHandler(this.tsbSave_Click);
             // 
             // btnDelete
             // 
@@ -239,7 +249,7 @@
             this.btnGet.Size = new System.Drawing.Size(23, 23);
             this.btnGet.TabIndex = 4;
             this.btnGet.UseVisualStyleBackColor = false;
-            this.btnGet.Click += new System.EventHandler(this.toolStripButton2_Click_1);
+            this.btnGet.Click += new System.EventHandler(this.tsbGet_Click);
             // 
             // btnPut
             // 
@@ -253,7 +263,7 @@
             this.btnPut.Size = new System.Drawing.Size(23, 23);
             this.btnPut.TabIndex = 5;
             this.btnPut.UseVisualStyleBackColor = false;
-            this.btnPut.Click += new System.EventHandler(this.toolStripButton4_Click);
+            this.btnPut.Click += new System.EventHandler(this.tsbPut_Click);
             // 
             // panel2
             // 
@@ -280,7 +290,7 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.panel3);
             this.splitContainer3.Size = new System.Drawing.Size(311, 387);
-            this.splitContainer3.SplitterDistance = 323;
+            this.splitContainer3.SplitterDistance = 325;
             this.splitContainer3.SplitterWidth = 2;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -290,7 +300,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(311, 62);
+            this.panel3.Size = new System.Drawing.Size(311, 60);
             this.panel3.TabIndex = 0;
             // 
             // rtbItemValue
@@ -300,10 +310,68 @@
             this.rtbItemValue.Location = new System.Drawing.Point(0, 0);
             this.rtbItemValue.Name = "rtbItemValue";
             this.rtbItemValue.ReadOnly = true;
-            this.rtbItemValue.Size = new System.Drawing.Size(311, 62);
+            this.rtbItemValue.Size = new System.Drawing.Size(311, 60);
             this.rtbItemValue.TabIndex = 0;
             this.rtbItemValue.Text = "";
             this.rtbItemValue.WordWrap = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.复制ToolStripMenuItem,
+            this.删除ToolStripMenuItem,
+            this.编辑ToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.置顶ToolStripMenuItem,
+            this.置底ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 142);
+            // 
+            // 复制ToolStripMenuItem
+            // 
+            this.复制ToolStripMenuItem.Name = "复制ToolStripMenuItem";
+            this.复制ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.复制ToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.复制ToolStripMenuItem.Text = "复制";
+            this.复制ToolStripMenuItem.Click += new System.EventHandler(this.复制ToolStripMenuItem_Click);
+            // 
+            // 删除ToolStripMenuItem
+            // 
+            this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
+            this.删除ToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.删除ToolStripMenuItem.Text = "删除";
+            this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
+            // 
+            // 置顶ToolStripMenuItem
+            // 
+            this.置顶ToolStripMenuItem.Name = "置顶ToolStripMenuItem";
+            this.置顶ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.置顶ToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.置顶ToolStripMenuItem.Text = "置顶";
+            this.置顶ToolStripMenuItem.Click += new System.EventHandler(this.置顶ToolStripMenuItem_Click);
+            // 
+            // 置底ToolStripMenuItem
+            // 
+            this.置底ToolStripMenuItem.Name = "置底ToolStripMenuItem";
+            this.置底ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.T)));
+            this.置底ToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.置底ToolStripMenuItem.Text = "置底";
+            this.置底ToolStripMenuItem.Click += new System.EventHandler(this.置底ToolStripMenuItem_Click);
+            // 
+            // 编辑ToolStripMenuItem
+            // 
+            this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
+            this.编辑ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.编辑ToolStripMenuItem.Text = "编辑";
+            this.编辑ToolStripMenuItem.Click += new System.EventHandler(this.编辑ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(175, 6);
             // 
             // UcClipboardRing
             // 
@@ -324,6 +392,7 @@
             this.splitContainer3.Panel2.ResumeLayout(false);
             this.splitContainer3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -351,5 +420,12 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnGet;
         private System.Windows.Forms.Button btnPut;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 复制ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 置顶ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 置底ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 编辑ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

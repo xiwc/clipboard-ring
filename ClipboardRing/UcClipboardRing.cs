@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using QQPrintScreen;
-using DesktopHelper;
 using DeskTool;
-using System.Threading;
+using DesktopHelper;
+using QQPrintScreen;
 
 namespace ClipboardRing
 {
@@ -67,7 +63,6 @@ namespace ClipboardRing
             const int WM_KEYDOWN = 0x100;
             const int WM_KEYUP = 0x101;
             const int KEYEVENTF_KEYUP = 0x2;
-
 
             switch (m.Msg)
             {
@@ -146,6 +141,16 @@ namespace ClipboardRing
             lvDataItem.Items.Insert(0,lvItem);
         }
 
+        private void AddDataItemToBottom(DataItem item)
+        {
+            string[] items = { item.Alias, item.Value, item.Category, item.CreateTime, item.ModifyTime, item.LastAccessTime };
+
+            ListViewItem lvItem = new ListViewItem(items);
+            lvItem.Tag = item.Value;
+
+            lvDataItem.Items.Add(lvItem);
+        }
+
         private void lvDataItem_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             if (e.IsSelected)
@@ -163,13 +168,16 @@ namespace ClipboardRing
             }
             ConfigMgr.GetInstance().Save(ConfigItems.DataItems, items);
         }
+
         // 剪贴板值分类列表
         private List<String> categoryItems = new List<string>();
+
         public void LoadDataItems()
         {
             // 读取剪贴板保存值项目
             Object val = ConfigMgr.GetInstance().Read(ConfigItems.DataItems);
             List<ListViewItem> items = val as List<ListViewItem>;
+
             if (items != null)
             {
                 foreach (ListViewItem item in items)
@@ -177,6 +185,7 @@ namespace ClipboardRing
                     lvDataItem.Items.Add(item);
                     // 提取分类
                     string category = item.SubItems[2].Text;
+
                     if (!categoryItems.Contains(category))
                     {
                         categoryItems.Add(category);
@@ -198,6 +207,7 @@ namespace ClipboardRing
             if (Clipboard.ContainsText(TextDataFormat.Text))
             {
                 string txt = Clipboard.GetText(TextDataFormat.Text);
+
                 if (!string.IsNullOrEmpty(txt.Trim()))
                 {
                     DataItem item = new DataItem();
@@ -217,6 +227,7 @@ namespace ClipboardRing
         {
             GetItem();
         }
+
         /// <summary>
         /// 将选择的值放在剪贴板中
         /// </summary>
@@ -245,6 +256,7 @@ namespace ClipboardRing
         {
             UpdateItem();
         }
+
         /// <summary>
         /// 更新项目
         /// </summary>
@@ -368,7 +380,9 @@ namespace ClipboardRing
         {
             this.splitContainer3.Panel2Collapsed = !splitContainer3.Panel2Collapsed;
         }
+
         public FormCanvas formCanvas;
+
         private void UcClipboardRing_Load(object sender, EventArgs e)
         {
             formCanvas = new FormCanvas();
@@ -401,20 +415,22 @@ namespace ClipboardRing
             this.lvDataItem.Sort();   
         }
 
-        private void toolStripButton3_Click_1(object sender, EventArgs e)
+        private void tsbSave_Click(object sender, EventArgs e)
         {
             this.SaveDataItems();
             formCanvas.DrawString("保存成功!");
         }
 
-        private void toolStripButton2_Click_1(object sender, EventArgs e)
+        private void tsbGet_Click(object sender, EventArgs e)
         {
-            //this.GetItem();
             StringBuilder sb = new StringBuilder();
             foreach (ListViewItem item in lvDataItem.SelectedItems)
             {
-                sb.AppendLine(item.SubItems[1].Text);
-                item.SubItems[5].Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                if (item.Checked)
+                {
+                    sb.AppendLine(item.SubItems[1].Text);
+                    item.SubItems[5].Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                }
             }
 
             if (sb.Length > 0)
@@ -425,7 +441,7 @@ namespace ClipboardRing
             }
         }
 
-        private void toolStripButton4_Click(object sender, EventArgs e)
+        private void tsbPut_Click(object sender, EventArgs e)
         {
             this.PutItem();
         }
@@ -477,6 +493,96 @@ namespace ClipboardRing
                         item.Checked = true;
                     }
                 }
+            }
+        }
+
+        private void 复制ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (ListViewItem item in lvDataItem.SelectedItems)
+            {
+                if (item.Selected)
+                {
+                    sb.AppendLine(item.SubItems[1].Text);
+                    item.SubItems[5].Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                }
+            }
+
+            if (sb.Length > 0)
+            {
+                sb.Remove(sb.Length - Environment.NewLine.Length, Environment.NewLine.Length);
+                Clipboard.SetText(sb.ToString(), TextDataFormat.Text);
+                formCanvas.DrawString("复制成功!");
+            }
+        }
+
+        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteItem();
+        }
+
+        private void 编辑ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateItem();
+        }
+
+        private void 置顶ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListViewItem chkItem = null;
+
+            foreach (ListViewItem item in lvDataItem.SelectedItems)
+            {
+                if (item.Checked)
+                {
+                    chkItem = item;
+                    break;
+                }
+            }
+
+            if (chkItem != null)
+            {
+                string txt = chkItem.SubItems[1].Text;
+                lvDataItem.Items.Remove(chkItem);
+
+                DataItem item = new DataItem();
+                item.Value = txt;
+                item.Alias = StringUtils.GetShortMsg(txt.Trim(), ConstVal.MaxLength);
+                item.Category = ConstVal.DefaultCategory;
+                item.CreateTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                item.ModifyTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                item.LastAccessTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                AddDataItem(item);
+                formCanvas.DrawString("置顶成功!");
+            }
+        }
+
+        private void 置底ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListViewItem chkItem = null;
+
+            foreach (ListViewItem item in lvDataItem.SelectedItems)
+            {
+                if (item.Checked)
+                {
+                    chkItem = item;
+                    break;
+                }
+            }
+
+            if (chkItem != null)
+            {
+                string txt = chkItem.SubItems[1].Text;
+                lvDataItem.Items.Remove(chkItem);
+
+                DataItem item = new DataItem();
+                item.Value = txt;
+                item.Alias = StringUtils.GetShortMsg(txt.Trim(), ConstVal.MaxLength);
+                item.Category = ConstVal.DefaultCategory;
+                item.CreateTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                item.ModifyTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                item.LastAccessTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                AddDataItemToBottom(item);
+                formCanvas.DrawString("置底成功!");
             }
         }
     }

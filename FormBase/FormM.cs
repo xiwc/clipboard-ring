@@ -1,9 +1,7 @@
-﻿using System.Windows.Forms;
-using ClipboardRing;
+﻿using System;
 using System.Drawing;
-using System;
-using DesktopHelper;
-using QQPrintScreen;
+using System.Windows.Forms;
+using ClipboardRing;
 
 namespace FormBase
 {
@@ -21,7 +19,9 @@ namespace FormBase
             this.Region = CommonUtils.Round(Width, Height);
             this.panelMain.Region = CommonUtils.Round(panelMain.Width, panelMain.Height);
         }
+
         Point mouseDownLoc;
+
         private void panelMain_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -96,6 +96,7 @@ namespace FormBase
         {
             this.Visible = false;
         }
+
         private void 热键开启ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (热键开启ToolStripMenuItem.Checked)

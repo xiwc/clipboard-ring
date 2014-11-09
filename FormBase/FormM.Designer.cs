@@ -31,10 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormM));
             this.panelMain = new System.Windows.Forms.Panel();
-            this.ucClipboardRing1 = new ClipboardRing.UcClipboardRing();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.ucSearch1 = new FormBase.UcSearch();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -42,6 +40,8 @@
             this.热键开启ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关闭提示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ucClipboardRing1 = new ClipboardRing.UcClipboardRing();
+            this.ucSearch1 = new FormBase.UcSearch();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -64,13 +64,6 @@
             this.panelMain.TabIndex = 0;
             this.panelMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseDown);
             this.panelMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMain_MouseMove);
-            // 
-            // ucClipboardRing1
-            // 
-            this.ucClipboardRing1.Location = new System.Drawing.Point(1, 50);
-            this.ucClipboardRing1.Name = "ucClipboardRing1";
-            this.ucClipboardRing1.Size = new System.Drawing.Size(260, 315);
-            this.ucClipboardRing1.TabIndex = 9;
             // 
             // lblTitle
             // 
@@ -100,17 +93,6 @@
             this.toolTip.SetToolTip(this.btnClose, "关闭");
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // ucSearch1
-            // 
-            this.ucSearch1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucSearch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ucSearch1.Location = new System.Drawing.Point(2, 22);
-            this.ucSearch1.Margin = new System.Windows.Forms.Padding(0);
-            this.ucSearch1.Name = "ucSearch1";
-            this.ucSearch1.Size = new System.Drawing.Size(258, 25);
-            this.ucSearch1.TabIndex = 1;
             // 
             // pbLogo
             // 
@@ -163,6 +145,24 @@
             this.退出ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
+            // 
+            // ucClipboardRing1
+            // 
+            this.ucClipboardRing1.Location = new System.Drawing.Point(1, 50);
+            this.ucClipboardRing1.Name = "ucClipboardRing1";
+            this.ucClipboardRing1.Size = new System.Drawing.Size(260, 315);
+            this.ucClipboardRing1.TabIndex = 9;
+            // 
+            // ucSearch1
+            // 
+            this.ucSearch1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucSearch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ucSearch1.Location = new System.Drawing.Point(2, 22);
+            this.ucSearch1.Margin = new System.Windows.Forms.Padding(0);
+            this.ucSearch1.Name = "ucSearch1";
+            this.ucSearch1.Size = new System.Drawing.Size(258, 25);
+            this.ucSearch1.TabIndex = 1;
             // 
             // FormM
             // 

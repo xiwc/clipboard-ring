@@ -546,10 +546,10 @@ namespace ClipboardRing
 
                 DataItem item = new DataItem();
                 item.Value = txt;
-                item.Alias = StringUtils.GetShortMsg(txt.Trim(), ConstVal.MaxLength);
-                item.Category = ConstVal.DefaultCategory;
-                item.CreateTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
-                item.ModifyTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                item.Alias = chkItem.SubItems[0].Text;
+                item.Category = chkItem.SubItems[2].Text;
+                item.CreateTime = chkItem.SubItems[3].Text;
+                item.ModifyTime = chkItem.SubItems[4].Text;
                 item.LastAccessTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
                 AddDataItem(item);
                 formCanvas.DrawString("置顶成功!");
@@ -576,10 +576,10 @@ namespace ClipboardRing
 
                 DataItem item = new DataItem();
                 item.Value = txt;
-                item.Alias = StringUtils.GetShortMsg(txt.Trim(), ConstVal.MaxLength);
-                item.Category = ConstVal.DefaultCategory;
-                item.CreateTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
-                item.ModifyTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                item.Alias = chkItem.SubItems[0].Text;
+                item.Category = chkItem.SubItems[2].Text;
+                item.CreateTime = chkItem.SubItems[3].Text;
+                item.ModifyTime = chkItem.SubItems[4].Text;
                 item.LastAccessTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
                 AddDataItemToBottom(item);
                 formCanvas.DrawString("置底成功!");
